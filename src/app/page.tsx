@@ -8,7 +8,6 @@ import {
   Smartphone,
   Search,
   ArrowRight,
-  Download,
   ChevronDown,
   Zap,
   BarChart3,
