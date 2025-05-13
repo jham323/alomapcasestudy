@@ -1,0 +1,133 @@
+# Alo Yoga Interactive Store Locator - Case Study Page: Project Plan
+
+## 1. Project Goal
+
+To develop a single, polished, and interactive case study web page for the "Alo Yoga Interactive Store Locator" project, showcasing its features, development process, and impact.
+
+## 2. Key Technologies & Setup
+
+-   **Framework**: Next.js
+-   **Styling**: Tailwind CSS (including Tailwind Typography for Markdown)
+-   **Content**: Markdown (`/content/alo_store_locator_case_study.md`)
+    -   Parsing: `gray-matter` (for frontmatter, if any)
+    -   Conversion to HTML: `remark` and `remark-html`
+-   **Animations**: Scroll-in animations for section headings (e.g., using AOS or Framer Motion).
+-   **Font**: Poppins (to be used throughout the page).
+-   **Version Control**: Git
+
+## 3. Page Structure & Components (`pages/case-studies/alo-yoga.js`)
+
+-   **Overall Layout**:
+    -   Wrap all content within the site's existing `<Layout>` component (which should provide header and footer).
+-   **Hero Section**:
+    -   Full-width background: Image or monochrome gradient (echoing Alo's palette).
+    -   Title: "Alo Yoga Interactive Store Locator" (large Poppins font, centered).
+    -   Subtitle: "Case Study" and a brief one-sentence teaser (centered).
+-   **Main Content Area**:
+    -   Render content from `/content/alo_store_locator_case_study.md`.
+    -   Structure: Break content into logical sections (Executive Summary, Problem & Objectives, Solution Overview, etc.).
+    -   Typography: Utilize Tailwind Typography (`prose` classes) for Markdown elements (headings, lists, code blocks, links). Left-align body text.
+-   **Interactive Demo Placeholder**:
+    -   A responsive `div` with `id="alo-map-demo"`.
+    -   Displays "Live Demo Coming Soon" text.
+    -   Dimensions: `h-64` on mobile, `h-96` on desktop.
+    -   Styling: `rounded-xl`, `shadow-lg`, `bg-gray-100`, flex-centered content.
+-   **Download & Call to Action (CTA)**:
+    -   Centered button: "Download Full Case Study (Markdown)".
+        -   Links to `/downloads/alo_store_locator_case_study.md`.
+    -   Subtle link below button: "← Back to all case studies" (small, italic text).
+
+## 4. Content Rendering & Management
+
+-   **Source File**: `/content/alo_store_locator_case_study.md`.
+-   **Loading**: Use `getStaticProps` in Next.js to read and process the Markdown file at build time.
+-   **Parsing**: Use `gray-matter` to parse frontmatter (if any) and `remark`/`remark-html` to convert Markdown body to HTML.
+
+## 5. Visual Design & Styling
+
+-   **Font**: Poppins for all text.
+-   **Color Palette**:
+    -   Headings: `#000` (black).
+    -   Body Text: `#666` (dark gray).
+    -   Links: Subtle hover underline.
+-   **Code Snippets & Data Tables**:
+    -   Container: Light gray card (`bg-gray-50`, `rounded-2xl`, `p-6`, `shadow-sm`).
+-   **Images/Screenshots (within Markdown content)**:
+    -   Wrapper: Soft shadow container (`rounded-xl`, `shadow-lg`).
+-   **Grid Layouts**:
+    -   Implement a clean 2-column grid for any side-by-side content (e.g., screenshot + description) if required by the content.
+
+## 6. Interactivity
+
+-   **Scroll Animations**:
+    -   Apply smooth scroll-in animations on section headings (e.g., using AOS or Framer Motion).
+    -   Initialize animation library and apply `data-aos` attributes appropriately.
+-   **Responsive Design**: Ensure all elements, including the demo placeholder, are responsive across devices.
+
+## 7. SEO & Meta Tags (`<Head>` component)
+
+-   **Page Title**: Dynamically set to "Alo Yoga Store Locator Case Study | [Your Name]".
+-   **Meta Description**: Concise and relevant to the case study content.
+-   **Open Graph Tags**:
+    -   `og:title`: Same as page title.
+    -   `og:description`: Detailed description for social sharing.
+    -   `og:image`: Path to a representative image (e.g., screenshot of the map).
+    -   `og:type`: `article`.
+
+## 8. Asset Management
+
+-   **Markdown Content**: `content/alo_store_locator_case_study.md`.
+-   **Downloadable File**: `public/downloads/alo_store_locator_case_study.md` (ensure this is the same file or a copy).
+-   **Open Graph Image**: `public/images/alo-map-screenshot-placeholder.jpg` (replace placeholder with actual image).
+-   **Hero Background**: If an image is used, ensure it's optimized and placed in `public/images/`.
+
+## 9. Development Workflow & Custom Instructions
+
+-   **Simplicity**: Always prefer simple solutions.
+-   **DRY Principle**: Avoid duplication of code whenever possible.
+-   **Environment Separation**: (Note: Less critical for this static page, but good practice) Consider implications for Dev/Test/Prod if any dynamic elements were involved.
+-   **Task Focus**: Only make changes that are requested and relevant to the current task.
+-   **Code Cleanliness**: Keep the codebase very clean and organized.
+-   **File Management**: Avoid writing unnecessary scripts and files.
+-   **File Size Limits**: Aim to keep individual JavaScript files under 200-300 lines; refactor if they grow larger.
+-   **Data Handling**: Do not use mock data for Dev or Prod environments; use only in test environments if necessary. (Note: All content for this page is static).
+-   **Tech Stack Definition**: Adhere to the technologies defined in Section 2.
+-   **Terminal Commands**: When possible, run terminal commands within the agent window for transparency (e.g., dependency installation).
+-   **Python Version**: If Python scripts were needed (e.g., for pre-processing, not currently planned for the page itself), use an appropriate modern version (e.g., 3.11+).
+
+## 10. Key Implementation Steps (Checklist)
+
+1.  [x] Verify/Implement `<Layout>` component integration.
+2.  [x] Ensure `/content/alo_store_locator_case_study.md` exists and is correctly read by `getStaticProps`.
+3.  [x] Install necessary dependencies: `gray-matter`, `remark`, `remark-html`, `aos` (or chosen animation library), `@tailwindcss/typography`.
+4.  [x] Configure Poppins font globally & Tailwind for Poppins.
+5.  [x] Create/place downloadable Markdown file in `public/downloads/`.
+6.  [~] Create/place `og:image` in `public/images/` and update path in `<Head>`. (Note: Placeholder image file created; user to replace with actual image).
+7.  [x] Replace placeholder "Your Name" in `<Head>` and footer.
+8.  [~] Implement scroll-in animations for section headings. (Note: AOS initialized; basic animations on hero & article. Granular control pending design refinement).
+9.  [ ] Review and refine Tailwind Typography (`prose`) styles if needed.
+10. [ ] Test responsiveness thoroughly.
+11. [ ] Address any 2-column layout requirements if present in the Markdown or if desired.
+12. [ ] Final review of all styling, links, and SEO tags.
+
+This document will be updated as the project progresses. 
+
+## Accessible Color Scheme (2024-06 Update)
+
+- **Muted/Secondary Text:**
+  - On light backgrounds: `text-gray-700`
+  - On dark backgrounds: `text-gray-300`
+- **Cards:**
+  - On dark backgrounds: `bg-gray-900` or `bg-gray-800` with `text-white`
+  - On light backgrounds: `bg-white` with `text-gray-900` or `text-gray-800`
+- **Headings:**
+  - On dark backgrounds: `text-white` or `text-gray-100`
+  - On light backgrounds: `text-black` or `text-gray-900`
+- **Footer & Links:**
+  - Footer text: `text-gray-700` on light, `text-gray-300` on dark
+  - Links: `text-black` or `text-white` as appropriate, with underline on hover
+- **General Principle:**
+  - Never use a gray below `text-gray-700` for body text on light backgrounds (to ensure 4.5:1 contrast)
+  - Never use a gray below `text-gray-300` for body text on dark backgrounds
+
+All custom utility overrides for Tailwind color classes have been removed for clarity and accessibility. 
