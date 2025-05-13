@@ -56,20 +56,13 @@ export default function CaseStudy() {
             <p className="text-xl md:text-2xl text-[#cccccc] mb-8 max-w-3xl mx-auto animate-fade-in-delay">
               Transforming a static list into a dynamic, map-based experience for discovering Alo Store retail locations.
             </p>
-            <div className="flex justify-center gap-4 animate-fade-in-delay-2">
+            <div className="flex justify-center animate-fade-in-delay-2">
               <a
                 href="https://storemap-gamma.vercel.app/interactive_map/index.html"
-                className="px-6 py-3 bg-black text-white rounded-sm border border-white hover:opacity-80 transition-colors flex items-center gap-2"
+                className="px-6 py-3 bg-black text-white rounded-sm border border-white hover:opacity-80 transition-colors flex items-center gap-2 mx-auto"
                 target="_blank" rel="noopener noreferrer"
               >
-                View Live Store Locator <ChevronDown className="h-4 w-4 text-white" />
-              </a>
-              <a
-                href="https://storemap-gamma.vercel.app/interactive_map/index.html"
-                className="px-6 py-3 bg-black text-white rounded-sm border border-white hover:opacity-80 transition-colors flex items-center gap-2"
-                target="_blank" rel="noopener noreferrer"
-              >
-                Try the Interactive Map <Download className="h-4 w-4 text-white" />
+                View PoC Store Locator <ChevronDown className="h-4 w-4 text-white" />
               </a>
             </div>
           </div>
@@ -617,9 +610,15 @@ function deg2rad(deg) {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Like what you see?</h2>
             <p className="text-xl mb-8">Let&apos;s talk about your next project.</p>
-            <div className="inline-block px-8 py-4 bg-black text-white rounded-sm border border-white hover:bg-white hover:text-black transition-colors mb-8" id="cta-bottom">
+            <a
+              href="https://storemap-gamma.vercel.app/interactive_map/index.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-4 bg-black text-white rounded-sm border border-white hover:bg-white hover:text-black transition-colors mb-8 text-center"
+              id="cta-bottom"
+            >
               Try the Interactive Map
-            </div>
+            </a>
             <div>
               <a
                 href="https://www.linkedin.com/in/josh-hamilton-4601a27/"
